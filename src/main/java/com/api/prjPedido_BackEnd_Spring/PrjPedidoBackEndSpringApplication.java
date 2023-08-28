@@ -8,6 +8,8 @@ public class PrjPedidoBackEndSpringApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(PrjPedidoBackEndSpringApplication.class, args);
+		System.out.println("Hello word");
+
 	}
 
 }
