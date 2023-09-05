@@ -19,7 +19,7 @@ public class Produto implements Serializable{
     private Double preco;
 
      //Associação produto x categoria
-    @JsonBackReference
+    @JsonBackReference  //Referencia ciclica
     @ManyToMany //muitos para mito gera uma terceira tabela de associaçoes
     @JoinTable(name = "PRODUTO_CATEGORIA",
             joinColumns = @JoinColumn(name = "produto_id"),
