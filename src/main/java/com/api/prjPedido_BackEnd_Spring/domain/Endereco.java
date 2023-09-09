@@ -1,5 +1,7 @@
 package com.api.prjPedido_BackEnd_Spring.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
@@ -17,26 +19,29 @@ public class Endereco  implements Serializable {
     private String complemento;
     private String bairro;
     private String cep;
+
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name="cliente_id")
     private Cliente cliente;
+
     @ManyToOne
     @JoinColumn(name="cidade_id")
     private Cidade cidade;
 
     public Endereco(){
-
     }
 
-    public Endereco(Integer id, String logradouro, String numero, String complemento, String bairro, String cep, Cliente cliente,Cidade cidade) {
+    public Endereco(Integer id, String logradouro, String numero, String complemento, String bairro,
+                    String cep, Cliente cliente,Cidade cidade) {
         this.id = id;
         this.logradouro = logradouro;
         this.numero = numero;
         this.complemento = complemento;
         this.bairro = bairro;
         this.cep = cep;
-        this.cliente = cliente;
-        this.cidade =cidade;
+              this.cliente = cliente;
+              this.cidade =cidade;
     }
 
     public Integer getId() {

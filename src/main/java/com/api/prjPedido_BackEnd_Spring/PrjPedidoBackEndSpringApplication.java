@@ -67,6 +67,7 @@ public class PrjPedidoBackEndSpringApplication implements CommandLineRunner {
 
         Cliente cli1 = new Cliente (null,"Maria Silva", "maria@gmail.com","36378912377", TipoCliente.PESSOAFISICA);
         cli1.getTelefones().addAll(Arrays.asList("27330323","36744487"));
+
         Endereco e1 = new Endereco(null,"Rua Flores","300","Apto 303", "Jardim", "38220834",cli1,c1);
         Endereco e2 = new Endereco(null,"Avenida Matos","380","Sala 804", "Centro", "58220444",cli1,c2);
 

@@ -1,5 +1,7 @@
 package com.api.prjPedido_BackEnd_Spring.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -20,6 +22,7 @@ public class Estado implements Serializable {
     private  Integer id;
     private String nome;
 
+    @JsonBackReference
     @OneToMany(mappedBy="estado")
     private List<Cidade> cidades = new ArrayList<>();
 
@@ -48,7 +51,7 @@ public class Estado implements Serializable {
         this.nome = nome;
     }
 
-    public List<Cidade> getCidades() {
+   public List<Cidade> getCidades() {
         return cidades;
     }
 
